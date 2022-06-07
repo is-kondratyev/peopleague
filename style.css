@@ -608,7 +608,7 @@ select{
 }
 
 .nav-container {
-	padding-top: 156px;
+	/* padding-top: 156px; */
 }
 .nav-container .container{
 	position: relative;
@@ -1475,10 +1475,36 @@ select{
 .b-contacts__left .row > div{
 	padding-left: 16px;
 	padding-right: 16px;
+	position: relative;
 }
 .b-contacts__left .row > div img{
 	border-radius: 22px;
 }
+
+.b-contacts__left .row > div:nth-child(1)::before,
+.b-contacts__left .row > div:nth-child(3)::before {
+	content: '';
+	width: 129px;
+	height: 61px;
+	position: absolute;
+	left: calc(13px + 15px);
+	background-image: url(img/svg/pl-text--white.svg);
+	background-size: contain;	
+	background-position: center center;
+	background-repeat: no-repeat;
+}
+
+.b-contacts__left .row > div:nth-child(1)::before {
+	bottom: 19px;
+}
+
+.b-contacts__left .row > div:nth-child(3)::before {
+	width: 80px;
+	height: 39px;
+	top: 15px;
+	left: calc(17px + 15px);
+}
+
 .b-contacts__left-bottom{
 	display: flex;
 	justify-content: space-between;

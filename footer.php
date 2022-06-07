@@ -1,30 +1,54 @@
-	<!-- begin b-footer -->
+<?php
+	global $social_tg, $social_vk;
+?>
+
+<!-- begin b-footer -->
 	<footer class="b-footer">
 		<div class="container d-flex justify-content-between align-items-start">
 			<div class="b-footer__left">
 				<div class="b-title">Контакты</div>
-				<a href="tel:+7911958666" class="b-footer__item">
+				<?php 
+				  $contacts_phone = get_option('contacts_phone');
+					$contacts_email = get_option('contacts_email');
+					$contacts_address = get_option('contacts_address');
+
+					if ($contacts_phone != null) { 
+						$phohe_href = get_href_phone_number($contacts_phone);
+				?>
+				<a href="tel:<?= $phohe_href ?>" class="b-footer__item">
 					<i class="icon-i-phone"></i>
-					<b>8 (911) 958-66-64</b>
+					<b><?= $contacts_phone ?></b>
 				</a>
-				<a href="mailto:info@peopleague.ru" class="b-footer__item">
+				<?php echo get_href_phone_number($contacts_phone); ?>
+				<?php } 
+				if ($contacts_email != null) { ?>
+				<a href="mailto:<?= $contacts_email ?>" class="b-footer__item">
 					<i class="icon-i-mail"></i>
-					info@peopleague.ru
+					<?= $contacts_email ?>
 				</a>
+				<?php } 
+				if ($contacts_address != null) { ?>
 				<div class="b-footer__item">
 					<i class="icon-i-pl"></i>
-					г. Санкт-Петерубрг, п. Новосергиевка<br/>
-					Дельтовский проезд, 5616
+					<?= $contacts_address ?>
 				</div>
+				<?php } ?>
 				<div class="map-xs"></div>
 				<div class="b-footer__left-bottom">
 					<div class="b-footer__social">
 						<span>Мы в соцетях</span>
 						<ul>
+						<?php 
+							$social_tg = get_option('social_tg');
+							$social_vk = get_option('social_vk');
+							if ($social_tg != null) { ?>
+								<li><a target="blank" href="<?= $social_tg ?>"><i class="icon-i-telegram"></i></a></li>
+							<?php } 
+							if ($social_vk != null) { ?>								
+								<li><a target="blank" href="<?= $social_vk ?>"><i class="icon-i-vk"></i></a></li>
+							<?php } ?>
 							<!--<li><a href=""><i class="icon-i-inst"></i></a></li>-->
 							<!-- <li><a target="blank" href=""><i class="icon-i-fc"></i></a></li> -->
-							<li><a target="blank" href="https://t.me/peopleague"><i class="icon-i-telegram"></i></a></li>
-							<li><a target="blank" href="https://vk.com/league_people"><i class="icon-i-vk"></i></a></li>
 						</ul>
 					</div>
 					<div class="b-footer__dev">
@@ -66,7 +90,11 @@
 </div>
 
 <script src="<?= get_template_directory_uri() ?>/js/jquery.min.js"></script>
-<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBv9-H5GwlZA4EkUorU0gGHrq0H4pFMPS4"></script>
+<?php 
+  $gmaps_key = get_option('access_gmaps');
+		if ($gmaps_key != null) { ?>
+<script src="https://maps.googleapis.com/maps/api/js?key=<?= $gmaps_key ?>"></script>
+<?php } ?>
 <script src="<?= get_template_directory_uri() ?>/js/swiper.min.js"></script>
 <script src="<?= get_template_directory_uri() ?>/js/jquery.fancybox.min.js"></script>
 <script src="<?= get_template_directory_uri() ?>/js/script.js"></script>

@@ -1,5 +1,7 @@
 <?php 
   //$theme_path = get_template_directory_uri();
+  $social_tg = get_option('social_tg');
+  $social_vk = get_option('social_vk');
 ?>
 
 <!DOCTYPE html>
@@ -58,8 +60,16 @@
           <div class="b-social">
             <div class="b-social__title">Мы в социальных сетях</div>
             <ul>
-              <li><a target="blank" href="https://vk.com/league_people"><i class="icon-i-vk"></i></a></li>
-              <li><a target="blank" href="https://t.me/peopleague"><i class="icon-i-telegram"></i></a></li>
+            <?php
+              if ($social_vk != null) { ?>
+              <li><a target="blank" href="<?= $social_vk ?>2"><i class="icon-i-vk"></i></a></li>
+            <?php 
+              }
+              if ($social_tg != null) { ?>
+              <li><a target="blank" href="<?= $social_tg ?>3"><i class="icon-i-telegram"></i></a></li>
+            <?php 
+              } 
+            ?>
               <!--<li><a href=""><i class="icon-i-inst"></i></a></li>-->
             </ul>
           </div>

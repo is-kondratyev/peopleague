@@ -1,5 +1,6 @@
 <?php 
   $theme_path = get_template_directory_uri();
+	global $social_vk, $social_tg;
 ?>
 
 <?php get_header(); ?>
@@ -127,8 +128,16 @@
 		</div>
 		<div class="social">
 			<ul>
-				<li><a href=""><i class="icon-i-vk"></i></a></li>
-				<li><a href=""><i class="icon-i-telegram"></i></a></li>
+			<?php
+				if ($social_vk != null) { ?>
+				<li><a href="<?= $social_vk ?>"><i class="icon-i-vk"></i></a></li>
+			<?php 
+				}
+				if ($social_tg != null) { ?>				
+				<li><a href="<?= $social_tg ?>"><i class="icon-i-telegram"></i></a></li>
+			<?php 
+				} 
+			?>				
 				<!-- <li><a href=""><i class="icon-i-inst"></i></a></li> -->
 			</ul>
 		</div>
@@ -177,220 +186,6 @@
 			</div>
 		</div>
 	</section>
-
-<?php /*
-	<section id="sect-video" class="b-video">
-		<div class="container">
-			<div class="b-title">ВИДЕООБРАЩЕНИЕ ОСНОВАТЕЛЕЙ ЛИГИ</div>
-			<div class="b-video__content">
-				<video preload="none" class="video" width="100%" preload="none" poster="<?= $theme_path ?>/img/poster.png" height="auto">
-					<source src="<?= $theme_path ?>/img/stiln.mp4" type="video/mp4">
-				</video>
-				<button class="b-video__play playpause"><i class="icon-i-play"></i></button>
-			</div>
-		</div>
-	</section>
-	*/ ?>
-
-<?php /*
-	<section id="desc" class="b-desc">
-		<div class="container">
-			<div class="b-title">ЧТО ГОВОРЯТ УЧАСТНИКИ ЛИГИ УСПЕШНЫХ ЛЮДЕЙ</div>
-			<div class="b-slider__container">
-				<div class="b-slider swiper mySwiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="b-slider__overlay">
-								<button class="b-video__play playpause2"><i class="icon-i-play"></i></button>
-							</div>
-							<video preload="none" class="video2" width="100%" poster="<?= $theme_path ?>/img/poster.png" height="auto">
-								<source src="<?= $theme_path ?>/img/stiln.mp4" type="video/mp4">
-							</video>
-						</div>
-						<div class="swiper-slide">
-							<div class="b-slider__overlay">
-								<button class="b-video__play playpause2"><i class="icon-i-play"></i></button>
-							</div>
-							<video preload="none" class="video2" width="100%" poster="<?= $theme_path ?>/img/poster.png" height="auto">
-								<source src="<?= $theme_path ?>/img/stiln.mp4" type="video/mp4">
-							</video>
-						</div>
-						<div class="swiper-slide">
-							<div class="b-slider__overlay">
-								<button class="b-video__play playpause2"><i class="icon-i-play"></i></button>
-							</div>
-							<video preload="none" class="video2" width="100%" poster="<?= $theme_path ?>/img/poster.png" height="auto">
-								<source src="<?= $theme_path ?>/img/stiln.mp4" type="video/mp4">
-							</video>
-						</div>
-					</div>
-					<div class="swiper-pagination"></div>
-				</div>
-				<div class="b-slider__btn b-slider__btn-next icon-i-right-arrow"></div>
-				<div class="b-slider__btn b-slider__btn-prev icon-i-left-arrow"></div>
-			</div>
-		</div>
-	</section>
-	*/ ?>
-
-
-<?php /*
-	<section id="partners" class="b-partners">
-		<div class="container">
-			<div class="b-title">ПАРТНЕРЫ КЛУБА</div>
-			<div class="row">
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part2.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part3.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part4.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part5.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part6.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part7.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part8.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part9.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part10.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part11.svg" alt="">
-					</div>
-				</div>
-				<div class="col-xl-3 col-lg-3 col-md-4 col-sm-6">
-					<div class="b-partners__item">
-						<img src="<?= $theme_path ?>/img/part12.svg" alt="">
-					</div>
-				</div>
-			</div>
-		</div>
-	</section>
-	*/ ?>
-
-<?php /*
-	<section id="gallery" class="b-gallery">
-		<div class="container">
-			<div class="b-title">ФОТОГАЛЕРЕЯ</div>
-			<div class="row">
-				<div class="b-gallery__col col-xl-6 col-lg-6 col-md-6">
-					<a data-fancybox="images" href="<?= $theme_path ?>/img/img1.png">
-						<img src="<?= $theme_path ?>/img/img1.png" alt="">
-					</a>
-				</div>
-				<div class="b-gallery__col col-xl-6 col-lg-6 col-md-6">
-					<div class="row">
-						<div class="col-xl-6 col-lg-6 col-md-6">
-							<a data-fancybox="images" href="<?= $theme_path ?>/img/img2.png">
-								<img src="<?= $theme_path ?>/img/img2.png" alt="">
-							</a>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6">
-							<a href="" class="b-gallery__link ripple]]]]]]]]]]]]]]]]]]]]">Посмотреть<br/>
-								всю галерею</a>
-						</div>
-					</div>
-				</div>
-				<div class="b-gallery__col col-xl-6 col-lg-6 col-md-6">
-					<div class="row">
-						<div class="col-xl-6 col-lg-6 col-md-6">
-							<a data-fancybox="images" href="<?= $theme_path ?>/img/img3.png">
-								<img src="<?= $theme_path ?>/img/img3.png" alt="">
-							</a>
-						</div>
-						<div class="col-xl-6 col-lg-6 col-md-6">
-							<a data-fancybox="images" href="<?= $theme_path ?>/img/img4.png">
-								<img src="<?= $theme_path ?>/img/img4.png" alt="">
-							</a>
-						</div>
-					</div>
-				</div>
-				<div class="b-gallery__col col-xl-6 col-lg-6 col-md-6">
-					<a data-fancybox="images" href="<?= $theme_path ?>/img/img5.png">
-						<img src="<?= $theme_path ?>/img/img5.png" alt="">
-					</a>
-				</div>
-			</div>
-		</div>
-	</section>
-	*/ ?>
-
-	<?php /*
-	<section id="gallery-video" class="b-gallery-video">
-		<div class="container">
-			<div class="b-title">ВИДЕОГАЛЕРЕЯ</div>
-			<div class="b-slider__container">
-				<div class="b-slider swiper mySwiper">
-					<div class="swiper-wrapper">
-						<div class="swiper-slide">
-							<div class="b-slider__overlay">
-								<button class="b-video__play playpause2"><i class="icon-i-play"></i></button>
-							</div>
-							<video preload="none" class="video2" width="100%" poster="<?= $theme_path ?>/img/poster.png" height="auto">
-								<source src="<?= $theme_path ?>/img/stiln.mp4" type="video/mp4">
-							</video>
-						</div>
-						<div class="swiper-slide">
-							<div class="b-slider__overlay">
-								<button class="b-video__play playpause2"><i class="icon-i-play"></i></button>
-							</div>
-							<video preload="none" class="video2" width="100%" poster="<?= $theme_path ?>/img/poster.png" height="auto">
-								<source src="<?= $theme_path ?>/img/stiln.mp4" type="video/mp4">
-							</video>
-						</div>
-						<div class="swiper-slide">
-							<div class="b-slider__overlay">
-								<button class="b-video__play playpause2"><i class="icon-i-play"></i></button>
-							</div>
-							<video preload="none" class="video2" width="100%" poster="<?= $theme_path ?>/img/poster.png" height="auto">
-								<source src="<?= $theme_path ?>/img/stiln.mp4" type="video/mp4">
-							</video>
-						</div>
-					</div>
-					<div class="swiper-pagination"></div>
-				</div>
-				<div class="b-slider__btn b-slider__btn-next icon-i-right-arrow"></div>
-				<div class="b-slider__btn b-slider__btn-prev icon-i-left-arrow"></div>
-			</div>
-		</div>
-	</section>
-	*/ ?>
 
 	<section id="b-cont" class="b-contacts">
 		<div class="container d-flex justify-content-between align-content-start">
