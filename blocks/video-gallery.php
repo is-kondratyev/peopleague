@@ -1,4 +1,6 @@
-<?php global $theme_path; ?>
+<?php 
+  global $theme_path;
+?>
 
 <section id="gallery-video" class="b-gallery-video">
   <div class="container">

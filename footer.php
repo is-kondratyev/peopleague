@@ -1,5 +1,9 @@
 <?php
 	global $social_tg, $social_vk;
+	$gmaps_key = get_option('access_gmaps');
+	$contacts_phone = get_option('contacts_phone');
+	$contacts_email = get_option('contacts_email');
+	$contacts_address = get_option('contacts_address');
 ?>
 
 <!-- begin b-footer -->
@@ -7,11 +11,7 @@
 		<div class="container d-flex justify-content-between align-items-start">
 			<div class="b-footer__left">
 				<div class="b-title">Контакты</div>
-				<?php 
-				  $contacts_phone = get_option('contacts_phone');
-					$contacts_email = get_option('contacts_email');
-					$contacts_address = get_option('contacts_address');
-
+				<?php
 					if ($contacts_phone != null) { 
 						$phohe_href = get_href_phone_number($contacts_phone);
 				?>
@@ -19,7 +19,6 @@
 					<i class="icon-i-phone"></i>
 					<b><?= $contacts_phone ?></b>
 				</a>
-				<?php echo get_href_phone_number($contacts_phone); ?>
 				<?php } 
 				if ($contacts_email != null) { ?>
 				<a href="mailto:<?= $contacts_email ?>" class="b-footer__item">
@@ -38,14 +37,16 @@
 					<div class="b-footer__social">
 						<span>Мы в соцетях</span>
 						<ul>
-						<?php 
-							$social_tg = get_option('social_tg');
-							$social_vk = get_option('social_vk');
+						<?php					
 							if ($social_tg != null) { ?>
-								<li><a target="blank" href="<?= $social_tg ?>"><i class="icon-i-telegram"></i></a></li>
+								<li>
+									<a target="blank" href="<?= $social_tg ?>"><i class="icon-i-telegram"></i></a>
+								</li>
 							<?php } 
 							if ($social_vk != null) { ?>								
-								<li><a target="blank" href="<?= $social_vk ?>"><i class="icon-i-vk"></i></a></li>
+								<li>
+									<a target="blank" href="<?= $social_vk ?>"><i class="icon-i-vk"></i></a>
+								</li>
 							<?php } ?>
 							<!--<li><a href=""><i class="icon-i-inst"></i></a></li>-->
 							<!-- <li><a target="blank" href=""><i class="icon-i-fc"></i></a></li> -->
@@ -91,8 +92,7 @@
 
 <script src="<?= get_template_directory_uri() ?>/js/jquery.min.js"></script>
 <?php 
-  $gmaps_key = get_option('access_gmaps');
-		if ($gmaps_key != null) { ?>
+	if ($gmaps_key != null) { ?>
 <script src="https://maps.googleapis.com/maps/api/js?key=<?= $gmaps_key ?>"></script>
 <?php } ?>
 <script src="<?= get_template_directory_uri() ?>/js/swiper.min.js"></script>

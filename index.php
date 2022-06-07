@@ -1,6 +1,6 @@
 <?php 
-  $theme_path = get_template_directory_uri();
 	global $social_vk, $social_tg;
+  $theme_path = get_template_directory_uri();
 ?>
 
 <?php get_header(); ?>

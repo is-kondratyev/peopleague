@@ -1,4 +1,6 @@
-<?php global $theme_path; ?>
+<?php 
+  global $theme_path; 
+?>
 
 <section id="info" class="b-info">
   <div class="container d-flex justify-content-center align-items-end">

@@ -1,5 +1,4 @@
-<?php 
-  //$theme_path = get_template_directory_uri();
+<?php   
   $social_tg = get_option('social_tg');
   $social_vk = get_option('social_vk');
 ?>
@@ -26,10 +25,7 @@
 	
 </head>
 <body <?php body_class(); ?>>
-<!-- 11 -->
-
-  <div class="b-container">
-    <!-- begin b-header -->
+  <div class="b-container">    
     <header class="b-header">
       <div class="container container_2 d-flex justify-content-between align-items-center">
         <a href="" class="b-logo">
@@ -67,9 +63,7 @@
               }
               if ($social_tg != null) { ?>
               <li><a target="blank" href="<?= $social_tg ?>3"><i class="icon-i-telegram"></i></a></li>
-            <?php 
-              } 
-            ?>
+            <?php } ?>
               <!--<li><a href=""><i class="icon-i-inst"></i></a></li>-->
             </ul>
           </div>

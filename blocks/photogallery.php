@@ -1,12 +1,12 @@
-<?php global $theme_path; ?>
+<?php 
+  global $theme_path; 
+  $gallery = get_field('photogallery');
+?>
 
 <section id="gallery" class="b-gallery">
   <div class="container">
     <div class="b-title"><?php the_field('photogallery_title'); ?></div>
     <div class="row">
-      <?php $gallery = get_field('photogallery'); 
-      print_r($gallery);
-      ?>
       <div class="b-gallery__col col-xl-6 col-lg-6 col-md-6">
         <a data-fancybox="images" href="<?= $gallery['photo_1']['img_min']; ?>">
           <img src="<?= $gallery['photo_1']['img_full']; ?>" alt="">
@@ -25,6 +25,7 @@
               всю галерею
               <span>(в разработке)</span>
             </a>
+            <?php //Убрать после ввода галереи ?>
             <script>
               document.querySelector('.b-gallery__link').addEventListener('click', function(event) {
                 event.preventDefault();
